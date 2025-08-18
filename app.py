@@ -13,7 +13,10 @@ from utils.emails_utils import send_email
 # -----------------------------------------------------------------------------
 # Load environment variables from .env file (for email credentials)
 # -----------------------------------------------------------------------------
-load_dotenv()
+# On Render, env vars are already injected automatically.
+if os.getenv("RENDER") is None:  # detect local run
+    from dotenv import load_dotenv
+    load_dotenv()
 SENDER_EMAIL = os.getenv("SENDER_EMAIL")
 SENDER_PASSWORD = os.getenv("SENDER_PASSWORD")
 
