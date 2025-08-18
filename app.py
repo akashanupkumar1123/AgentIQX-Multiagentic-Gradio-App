@@ -267,7 +267,6 @@ with gr.Blocks(css=custom_css, head=extra_head_html,
 # -----------------------------------------------------------------------------
 # Launch the app
 # -----------------------------------------------------------------------------
-app.launch()
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 7860))  # Render sets PORT dynamically
