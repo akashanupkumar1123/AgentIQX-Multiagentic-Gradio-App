@@ -1,0 +1,251 @@
+/* Theme toggle hide */
+[class*="theme"], [id*="theme"], [data-theme], .gr-theme-toggle {
+  display: none !important;
+}
+
+/* Root variables */
+:root {
+  --color-primary: #23e3ae; /* teal/cyan accent */
+  --color-primary-hover: #00ffe7;
+  --color-text: #e0e0e0;
+  --color-text-secondary: #a0a0a0;
+  --color-input-bg: rgba(40, 40, 40, 0.85);
+  --color-container-bg: rgba(20, 20, 20, 0.85);
+  --radius-base: 16px;
+  --radius-sm: 12px;
+  --font-family-sans: 'Poppins', sans-serif;
+}
+
+/* Reset & Base Layout – FORCE Solid Black Background on Every Wrapper */
+html, body, #root, .gradio-container {
+  height: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  font-size: clamp(15px, 1.5vw, 18px);
+  background: #000000 !important;   /* Solid black background */
+  color: var(--color-text, #e0e0e0) !important;
+  font-family: var(--font-family-sans, 'Poppins', sans-serif) !important;
+  line-height: 1.5;
+}
+
+/* Containers with glassy effect */
+.gr-container {
+  background: var(--color-container-bg);
+  border-radius: var(--radius-base);
+  padding: 2rem 2.5rem;
+  margin: 1.5rem 0;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    inset 0 0 40px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(35, 227, 174, 0.3);
+  color: var(--color-text);
+  transition: box-shadow 0.4s ease;
+}
+
+/* Container hover glow */
+.gr-container:hover {
+  box-shadow:
+    0 12px 48px rgba(0, 255, 230, 0.9),
+    inset 0 0 60px rgba(0, 255, 230, 0.2);
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 8px var(--color-primary);
+}
+
+/* Buttons */
+button, .gr-button {
+  background: rgba(35, 227, 174, 0.2);
+  border: 1.8px solid var(--color-primary);
+  border-radius: var(--radius-base);
+  padding: 0.75em 2.2em;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  cursor: pointer;
+  box-shadow:
+    inset 0 0 15px var(--color-primary),
+    0 0 30px var(--color-primary);
+  transition: box-shadow 0.4s ease, color 0.4s ease, transform 0.25s ease;
+}
+
+button:hover, .gr-button:hover,
+button:focus-visible, .gr-button:focus-visible {
+  color: var(--color-primary-hover);
+  box-shadow:
+    inset 0 0 25px var(--color-primary-hover),
+    0 0 60px var(--color-primary-hover),
+    0 0 25px #00ffe7dd;
+  transform: scale(1.1);
+  outline: none;
+}
+
+button:active, .gr-button:active {
+  transform: scale(0.98);
+  box-shadow:
+    inset 0 0 25px #00ffe7,
+    0 0 25px #00ffe7;
+}
+
+button:disabled, .gr-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  box-shadow: none;
+  border-color: #222;
+  color: #555;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Inputs – brighter text */
+input, textarea, .gr-textbox {
+  background-color: var(--color-input-bg) !important;
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  color: #f4f4f4 !important; /* brighter for readability */
+  padding: 0.6em 1.2em;
+  font-weight: 600;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Placeholder styling */
+input::placeholder, textarea::placeholder {
+  color: #b0b0b0 !important;
+  opacity: 1 !important;
+  font-style: italic;
+}
+
+/* Output text areas (summary, transcript, email status, etc.) */
+.gr-textbox, .gr-text, .output-text {
+  color: #f4f4f4 !important;
+  background-color: var(--color-input-bg) !important;
+  font-weight: 600;
+}
+
+/* Readonly/disabled fields */
+.gr-textbox[readonly], .gr-textbox[disabled],
+input[readonly], textarea[readonly], input[disabled], textarea[disabled] {
+  color: #e0e0e0 !important;
+  background-color: rgba(40,40,40,0.85) !important;
+  opacity: 1 !important;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--color-primary-hover);
+  box-shadow: 0 0 18px 3px var(--color-primary-hover);
+  outline: none;
+}
+
+input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--color-primary-hover);
+  outline-offset: 2px;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-hover);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) transparent;
+}
+
+/* Utilities */
+.email-error-message {
+  color: #f87171;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  font-weight: 600;
+}
+
+/* Pulse Animation for TTS */
+.tts-playing {
+  animation: pulse 1.6s infinite;
+  border-radius: 50%;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 8px 2px var(--color-primary); }
+  50% { box-shadow: 0 0 14px 6px var(--color-primary); }
+  100% { box-shadow: 0 0 8px 2px var(--color-primary); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  
+  button, .gr-button {
+    font-size: 1rem;
+    padding: 0.6em 1.5em;
+  }
+  
+  .gr-container {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+/* Force dark text for ANYTHING inside the settings modal */
+body [role="dialog"],
+body [role="dialog"] *,
+[data-testid="settings-modal"],
+[data-testid="settings-modal"] * {
+  color: #000000 !important;
+}
+
+/* Inputs inside the modal */
+body [role="dialog"] input,
+body [role="dialog"] textarea,
+body [role="dialog"] select,
+[data-testid="settings-modal"] input,
+[data-testid="settings-modal"] textarea,
+[data-testid="settings-modal"] select {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+  border: 1px solid #ccc !important;
+}
+
+/* Placeholder text */
+body [role="dialog"] input::placeholder,
+body [role="dialog"] textarea::placeholder,
+[data-testid="settings-modal"] input::placeholder,
+[data-testid="settings-modal"] textarea::placeholder {
+  color: #555555 !important;
+}
+
+/* Headings in modal */
+body [role="dialog"] h1,
+body [role="dialog"] h2,
+body [role="dialog"] h3,
+body [role="dialog"] label,
+[data-testid="settings-modal"] h1,
+[data-testid="settings-modal"] h2,
+[data-testid="settings-modal"] h3,
+[data-testid="settings-modal"] label {
+  color: #111111 !important;
+  font-weight: 600 !important;
+}
+

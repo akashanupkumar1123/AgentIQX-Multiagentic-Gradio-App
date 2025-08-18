@@ -1,0 +1,55 @@
+# Core
+python-dotenv==1.1.1
+rich==14.0.0
+loguru==0.7.0
+
+# UI
+gradio==5.42.0
+bokeh==3.7.2
+
+# PDF / Document processing
+PyPDF2==3.0.1
+PyMuPDF==1.26.3
+fpdf==1.7.2
+beautifulsoup4==4.12.3
+lxml==5.4.0
+
+# Audio / Video / Transcription
+openai-whisper==20250625
+faster-whisper==1.1.1
+pydub==0.25.1
+av==15.0.0
+playsound==1.2.2
+opencv-python==4.10.0.84
+
+# Summarization / LLM / RAG
+sentence-transformers==5.0.0
+faiss-cpu==1.11.0
+transformers==4.53.2
+torch==2.7.1
+torchaudio==2.7.1
+torchvision==0.22.1
+tiktoken==0.10.0
+
+# TTS
+gTTS==2.5.4
+pyttsx3==2.90
+
+# Utilities
+numpy==1.26.4
+pandas==2.2.3
+scikit-learn==1.6.1
+scipy==1.14.1
+requests==2.32.3
+urllib3==2.2.3
+python-dateutil==2.9.0.post0
+regex==2024.11.6
+
+# Email
+secure-smtplib==0.1.0  # or smtplib (built-in), optional helper
+
+# Optional / Dev
+jupyter==1.1.1
+notebook==7.2.2
+ipython==8.12.3
+

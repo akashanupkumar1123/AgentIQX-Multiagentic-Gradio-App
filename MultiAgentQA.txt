@@ -1,0 +1,18 @@
+MultiAgentQA/
+├── app.py                  # Main Gradio App
+├── agents/
+│   ├── pdf_agent.py        # Handles PDF parsing + QA
+│   ├── video_agent.py      # Extracts audio > transcribes > answers
+│   ├── embed_agent.py      # Embeds text using MiniLM
+│   ├── rag_agent.py        # FAISS + RAG pipeline
+│   ├── llm_agent.py        # Central LLM caller (OpenAI or local)
+│   ├── explain_agent.py    # Optional: Explanation Agent (Chain of Thought / rationale)
+│   └── perplexity_agent.py # Uses Perplexity API / scraping for web QA
+├── utils/
+│   ├── faiss_utils.py      # FAISS save/load/query
+│   └── chunking_utils.py   # Text chunking and preprocessing
+├── data/
+│   ├── uploaded/           # Stores user-uploaded PDFs/Videos
+│   └── transcripts/        # Stores Whisper / transcription outputs
+├── requirements.txt
+└── README.md
