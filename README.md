@@ -71,32 +71,6 @@
 
 ---
 
-## **🗂 Project Structure**
-
-app.py # Main Gradio app & workflow orchestration
-agents/
-├─ embed_agent.py # Embedding & FAISS index management
-├─ explain_agent.py # Step-by-step explanation generator
-├─ llm_agent.py # LLM orchestration & prompt handling
-├─ ollama_agent.py # Local LLM interface (TinyLlama/DeepSeek)
-├─ pdf_agent.py # Multi-method PDF extraction & chunking
-├─ rag_agent.py # RAG pipeline orchestration
-├─ video_agent.py # Audio/video transcription with Whisper
-utils/
-├─ chunking_utils.py # Text chunking & embedding helpers
-├─ faiss_utils.py # FAISS index save/load/query
-├─ summary_agent.py # Summarization logic & style handling
-├─ transcript_utils.py # File transcript extraction & saving
-├─ tts_utils.py # Text-to-speech pipeline
-├─ emails_utils.py # SMTP email sender
-├─ whisper_utils.py # Whisper loader & GPU auto-selection
-├─ init.py # dotenv loader for secrets
-style.css # Glassmorphic, dark-themed CSS
-.env # Email credentials (SENDER_EMAIL, SENDER_PASSWORD)
-
-
----
-
 ## **📊 Workflow Overview**
 
 1. **Upload & Extract** → PDF / Audio / Video → Raw text via Whisper & multi-method extraction.  
