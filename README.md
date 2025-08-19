@@ -1,6 +1,9 @@
 # **AgentIQX** 🚀
 *Modern Multi-Agent Audio/Video/PDF Transcription & Summarization App*
 
+![AgentIQX Banner](./agentiqx_banner.png)
+
+
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)  
 [![Gradio](https://img.shields.io/badge/Gradio-v3.40-brightgreen.svg)](https://gradio.app/)  
 [![Whisper](https://img.shields.io/badge/Whisper-v1.0-lightgrey.svg)](https://github.com/openai/whisper)  
